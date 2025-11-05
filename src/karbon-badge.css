@@ -1,0 +1,44 @@
+#karbon-badge {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  line-height: 1;
+}
+
+#karbon-badge sub {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
+.karbon-container {
+  display: flex;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#karbon-result {
+  flex-grow: 1;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  background: #ffffff;
+  border: 2px solid #02875a;
+  border-right: none;
+  min-width: 10em;
+}
+
+#karbon-link {
+  padding: 0.5em 1em;
+  background: #02875a;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #02875a;
+}
+
+#karbon-rating {
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
