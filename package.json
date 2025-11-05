@@ -1,0 +1,35 @@
+{
+  "name": "@statibke/karbon-badge",
+  "version": "1.0.0",
+  "description": "Lightweight JavaScript widget that displays CO2 emissions data for web pages",
+  "main": "dist/karbon-badge.min.js",
+  "files": [
+    "dist",
+    "karbon-badge.js",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "yarn build:badge",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "carbon",
+    "co2",
+    "emissions",
+    "sustainability",
+    "environment",
+    "badge",
+    "widget"
+  ],
+  "author": "Karbon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/statikbe/karbon.git",
+    "directory": "badge"
+  },
+  "bugs": {
+    "url": "https://github.com/statikbe/karbon/issues"
+  },
+  "homepage": "https://github.com/statikbe/karbon#readme"
+}
