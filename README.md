@@ -22,7 +22,7 @@ Add this HTML where you want the badge to appear:
 <div id="karbon-badge"></div>
 
 <!-- Badge script (minified) -->
-<script src="https://unpkg.com/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.0/dist/karbon-badge.min.js"></script>
 ```
 
 ### If you want extra control over structure and layout
@@ -40,6 +40,10 @@ You can add the optional attribute `data-custom-style` if you want to take care 
   <div id="karbon-rating">Rating: <strong>${data.co2_rating}</strong></div>
 </template>
 ```
+
+::: warning The link to the karbon page is mandatory
+If you alter the structure of the badge, you need to provide a link to `https://karbon.statik.be` on your page.
+:::
 
 ## How It Works
 
@@ -67,13 +71,3 @@ And reference it via:
 ```html
 <script src="https://unpkg.com/@statikbe/karbon-badge/dist/karbon-badge.min.js"></script>
 ```
-
-## Production
-
-For production deployment:
-
-1. Run `yarn build` to create minified version
-2. Update `apiEndpoint` in source to your production domain before building
-3. Publish to npm or deploy `badge/dist/karbon-badge.min.js` to your CDN
-4. Add proper CORS headers if serving cross-domain
-5. Monitor API rate limits (60 req/min/IP)

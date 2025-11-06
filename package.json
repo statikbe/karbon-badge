@@ -1,5 +1,5 @@
 {
-  "name": "@statibke/karbon-badge",
+  "name": "@statikbe/karbon-badge",
   "version": "1.0.0",
   "description": "Lightweight JavaScript widget that displays CO2 emissions data for web pages",
   "main": "dist/karbon-badge.min.js",
@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/statikbe/karbon.git",
+    "url": "git+https://github.com/statikbe/karbon.git",
     "directory": "badge"
   },
   "bugs": {
