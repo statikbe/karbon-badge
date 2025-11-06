@@ -1,6 +1,6 @@
 {
   "name": "@statikbe/karbon-badge",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Lightweight JavaScript widget that displays CO2 emissions data for web pages",
   "main": "dist/karbon-badge.min.js",
   "files": [

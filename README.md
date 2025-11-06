@@ -22,7 +22,7 @@ Add this HTML where you want the badge to appear:
 <div id="karbon-badge"></div>
 
 <!-- Badge script (minified) -->
-<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.0/dist/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
 ```
 
 ### If you want extra control over structure and layout
@@ -41,9 +41,9 @@ You can add the optional attribute `data-custom-style` if you want to take care 
 </template>
 ```
 
-::: warning The link to the karbon page is mandatory
-If you alter the structure of the badge, you need to provide a link to `https://karbon.statik.be` on your page.
-:::
+> ⚠️ **The link to the karbon page is mandatory**
+>
+> If you alter the structure of the badge, you need to provide a link to `https://karbon.statik.be` on your page.
 
 ## How It Works
 
@@ -69,5 +69,5 @@ yarn add @statikbe/karbon-badge
 And reference it via:
 
 ```html
-<script src="https://unpkg.com/@statikbe/karbon-badge/dist/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
 ```
