@@ -72,7 +72,6 @@
       }
     } catch (error) {
       console.error("Karbon badge error:", error);
-      getEl("karbon-result").innerHTML = "Data unavailable";
       localStorage.removeItem(getCacheKey());
     }
   };
@@ -194,10 +193,12 @@
         }
       } catch (error) {
         console.error("Error parsing cached data:", error);
+        renderBadge({});
         fetchCarbonData();
       }
     } else {
-      // No cache, fetch fresh data
+      // Render empty badge immediately, then fetch
+      renderBadge({});
       fetchCarbonData();
     }
   };
