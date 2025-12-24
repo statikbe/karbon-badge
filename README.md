@@ -22,7 +22,8 @@ Add this HTML where you want the badge to appear:
 <div id="karbon-badge"></div>
 
 <!-- Badge script (minified) -->
-<script src="https://unpkg.com/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@statikbe/karbon-badge@latest/dist/karbon-badge.min.js"></script>
+
 ```
 
 
@@ -50,7 +51,7 @@ yarn add @statibke/karbon-badge
 
 And reference it via:
 ```html
-<script src="https://unpkg.com/@statibke/karbon-badge/dist/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@statikbe/karbon-badge@latest/dist/karbon-badge.min.js"></script>
 ```
 
 ## Production
