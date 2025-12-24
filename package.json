@@ -1,6 +1,6 @@
 {
-  "name": "@statibke/karbon-badge",
-  "version": "1.0.0",
+  "name": "@statikbe/karbon-badge",
+  "version": "1.0.2",
   "description": "Lightweight JavaScript widget that displays CO2 emissions data for web pages",
   "main": "dist/karbon-badge.min.js",
   "files": [
@@ -9,7 +9,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "yarn build:badge",
+    "build": "vite build",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -25,11 +25,16 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/statikbe/karbon.git",
+    "url": "git+https://github.com/statikbe/karbon.git",
     "directory": "badge"
   },
   "bugs": {
     "url": "https://github.com/statikbe/karbon/issues"
   },
-  "homepage": "https://github.com/statikbe/karbon#readme"
+  "homepage": "https://github.com/statikbe/karbon#readme",
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
+  "devDependencies": {
+    "terser": "^5.44.1",
+    "vite": "^7.2.0"
+  }
 }
