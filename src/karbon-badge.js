@@ -62,12 +62,14 @@
         renderBadge(data.data);
       }
 
-      // Cache with timestamp
-      const cacheData = {
-        ...data.data,
-        cachedAt: Date.now(),
-      };
-      localStorage.setItem(getCacheKey(), JSON.stringify(cacheData));
+      // Only cache if we have valid CO2 data
+      if (data.data && data.data.co2_grams) {
+        const cacheData = {
+          ...data.data,
+          cachedAt: Date.now(),
+        };
+        localStorage.setItem(getCacheKey(), JSON.stringify(cacheData));
+      }
     } catch (error) {
       console.error("Karbon badge error:", error);
       getEl("karbon-result").innerHTML = "Data unavailable";
@@ -95,12 +97,7 @@
    */
   let template = `
     <div class="karbon-container">
-        \${
-          data.co2_grams
-            ? \`<span id="karbon-result">\${data.co2_grams}g of CO<sub>2</sub></span
-        >\`
-            : '<span id="karbon-no-result">Measuring CO<sub>2</sub>&hellip;</span>'
-        }
+        <span id="karbon-result">\${data.co2_grams ? \`\${data.co2_grams}g of CO<sub>2</sub>\` : 'No data'}</span>
         <a id="karbon-link" href="https://karbon.statik.be" target="_blank" rel="noopener">Karbon</a>
       </div>
       <div id="karbon-rating">Rating: <strong>\${data.co2_rating}</strong></div>
