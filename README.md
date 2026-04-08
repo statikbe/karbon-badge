@@ -22,7 +22,7 @@ Add this HTML where you want the badge to appear:
 <div id="karbon-badge"></div>
 
 <!-- Badge script (minified) -->
-<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@thekindkids/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
 ```
 
 ### If you want extra control over structure and layout
@@ -35,7 +35,7 @@ You can add the optional attribute `data-custom-style` if you want to take care 
   <div class="karbon-container">
     ${ data.co2_grams ? `<span id="karbon-result">${data.co2_grams}g of CO<sub>2</sub></span
     >` : '<span id="karbon-no-result">Measuring CO<sub>2</sub>&hellip;</span>' }
-    <a id="karbon-link" href="https://karbon.statik.be" target="_blank" rel="noopener">Karbon</a>
+    <a id="karbon-link" href="https://karbon.thekindkids.be" target="_blank" rel="noopener">Karbon</a>
   </div>
   <div id="karbon-rating">Rating: <strong>${data.co2_rating}</strong></div>
 </template>
@@ -43,7 +43,7 @@ You can add the optional attribute `data-custom-style` if you want to take care 
 
 > ⚠️ **The link to the karbon page is mandatory**
 >
-> If you alter the structure of the badge, you need to provide a link to `https://karbon.statik.be` on your page.
+> If you alter the structure of the badge, you need to provide a link to `https://karbon.thekindkids.be` on your page.
 
 ## How It Works
 
@@ -61,13 +61,13 @@ This badge is designed to be published to npm. The `dist/` folder is gitignored 
 When published to npm, users can install via:
 
 ```bash
-npm install @statikbe/karbon-badge
+npm install @thekindkids/karbon-badge
 # or
-yarn add @statikbe/karbon-badge
+yarn add @thekindkids/karbon-badge
 ```
 
 And reference it via:
 
 ```html
-<script src="https://unpkg.com/@statikbe/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
+<script src="https://unpkg.com/@thekindkids/karbon-badge@1.0.2/dist/karbon-badge.min.js"></script>
 ```

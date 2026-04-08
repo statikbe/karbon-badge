@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Karbon Carbon Badge is a standalone JavaScript widget that displays CO2 emissions data for web pages. It's designed as an npm package (`@statikbe/karbon-badge`) that can be embedded via a single script tag.
+Karbon Carbon Badge is a standalone JavaScript widget that displays CO2 emissions data for web pages. It's designed as an npm package (`@thekindkids/karbon-badge`) that can be embedded via a single script tag.
 
 ## Architecture
 
@@ -21,7 +21,7 @@ The entire badge is implemented as a self-contained IIFE (Immediately Invoked Fu
 
 - **CONFIG object** (lines 12-17): Contains API endpoint, cache settings, and DOM identifiers
 - **Caching layer**: 24-hour localStorage-based cache with background refresh when stale
-- **API integration**: Fetches from Karbon API at `https://karbon.statik.be/api/v1/carbon`
+- **API integration**: Fetches from Karbon API at `https://karbon.thekindkids.be/api/v1/carbon`
 - **Rendering**: Inline CSS and HTML template injected into `#karbon-badge` container
 
 ### Data Flow
@@ -55,7 +55,7 @@ npm run prepublishOnly  # Automatically runs build before publish
 The production API endpoint is hardcoded in `karbon-badge.js:13`:
 
 ```javascript
-apiEndpoint: "https://karbon.statik.be/api/v1/carbon";
+apiEndpoint: "https://karbon.thekindkids.be/api/v1/carbon";
 ```
 
 This must be updated before building for different environments.
@@ -65,7 +65,7 @@ This must be updated before building for different environments.
 The Karbon website link is hardcoded in the template (line 144):
 
 ```javascript
-href = "https://karbon.statik.be";
+href = "https://karbon.thekindkids.be";
 ```
 
 This should be updated to the production URL before publishing.
@@ -75,8 +75,8 @@ This should be updated to the production URL before publishing.
 - Source file: `karbon-badge.js` (development version with comments)
 - Built file: `dist/karbon-badge.min.js` (production minified)
 - The `dist/` folder is gitignored but included in npm package via `files` field
-- Package is published to npm as `@statikbe/karbon-badge`
-- Users can access via unpkg CDN: `https://unpkg.com/@statikbe/karbon-badge/dist/karbon-badge.min.js`
+- Package is published to npm as `@thekindkids/karbon-badge`
+- Users can access via unpkg CDN: `https://unpkg.com/@thekindkids/karbon-badge/dist/karbon-badge.min.js`
 
 ## Testing the Widget
 

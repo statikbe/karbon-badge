@@ -10,7 +10,7 @@
   "use strict";
 
   const CONFIG = {
-    apiEndpoint: "https://karbon.statik.be/api/v1/carbon",
+    apiEndpoint: "https://karbon.thekindkids.be/api/v1/carbon",
     // apiEndpoint: "/testdata.json",
     cacheDuration: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
     containerId: "karbon-badge",
@@ -62,15 +62,16 @@
         renderBadge(data.data);
       }
 
-      // Cache with timestamp
-      const cacheData = {
-        ...data.data,
-        cachedAt: Date.now(),
-      };
-      localStorage.setItem(getCacheKey(), JSON.stringify(cacheData));
+      // Only cache if we have valid CO2 data
+      if (data.data && data.data.co2_grams) {
+        const cacheData = {
+          ...data.data,
+          cachedAt: Date.now(),
+        };
+        localStorage.setItem(getCacheKey(), JSON.stringify(cacheData));
+      }
     } catch (error) {
       console.error("Karbon badge error:", error);
-      getEl("karbon-result").innerHTML = "Data unavailable";
       localStorage.removeItem(getCacheKey());
     }
   };
@@ -81,10 +82,10 @@
    */
   const renderBadge = (data) => {
     container.innerHTML = evaluateJSTemplate(template, data);
-    const karbonLink = document.querySelector('a[href="https://karbon.statik.be"]');
+    const karbonLink = document.querySelector('a[href="https://karbon.thekindkids.be"]');
     if (!karbonLink || karbonLink.textContent.trim() !== "Karbon") {
       console.warn(
-        "Karbon badge link not found. Please ensure the link to karbon.statik.be is present for proper attribution."
+        "Karbon badge link not found. Please ensure the link to karbon.thekindkids.be is present for proper attribution."
       );
       container.remove();
     }
@@ -95,13 +96,8 @@
    */
   let template = `
     <div class="karbon-container">
-        \${
-          data.co2_grams
-            ? \`<span id="karbon-result">\${data.co2_grams}g of CO<sub>2</sub></span
-        >\`
-            : '<span id="karbon-no-result">Measuring CO<sub>2</sub>&hellip;</span>'
-        }
-        <a id="karbon-link" href="https://karbon.statik.be" target="_blank" rel="noopener">Karbon</a>
+        <span id="karbon-result">\${data.co2_grams ? \`\${data.co2_grams}g of CO<sub>2</sub>\` : 'No data'}</span>
+        <a id="karbon-link" href="https://karbon.thekindkids.be" target="_blank" rel="noopener">Karbon</a>
       </div>
       <div id="karbon-rating">Rating: <strong>\${data.co2_rating}</strong></div>
   `;
@@ -197,10 +193,12 @@
         }
       } catch (error) {
         console.error("Error parsing cached data:", error);
+        renderBadge({});
         fetchCarbonData();
       }
     } else {
-      // No cache, fetch fresh data
+      // Render empty badge immediately, then fetch
+      renderBadge({});
       fetchCarbonData();
     }
   };
