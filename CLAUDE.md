@@ -62,13 +62,13 @@ This must be updated before building for different environments.
 
 ### Badge Link
 
-The Karbon website link is hardcoded in the template (line 144):
+The Karbon website link in the template (line 100) dynamically includes the current page's domain:
 
 ```javascript
-href = "https://karbon.thekindkids.be";
+href = "https://karbon.thekindkids.be/share?url=${window.location.hostname}";
 ```
 
-This should be updated to the production URL before publishing.
+The base URL (`https://karbon.thekindkids.be`) should be updated if deploying to a different environment.
 
 ## Distribution
 

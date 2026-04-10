@@ -82,7 +82,7 @@
    */
   const renderBadge = (data) => {
     container.innerHTML = evaluateJSTemplate(template, data);
-    const karbonLink = document.querySelector('a[href="https://karbon.thekindkids.be"]');
+    const karbonLink = document.querySelector('a[href^="https://karbon.thekindkids.be"]');
     if (!karbonLink || karbonLink.textContent.trim() !== "Karbon") {
       console.warn(
         "Karbon badge link not found. Please ensure the link to karbon.thekindkids.be is present for proper attribution."
@@ -97,7 +97,7 @@
   let template = `
     <div class="karbon-container">
         <span id="karbon-result">\${data.co2_grams ? \`\${data.co2_grams}g of CO<sub>2</sub>\` : 'No data'}</span>
-        <a id="karbon-link" href="https://karbon.thekindkids.be" target="_blank" rel="noopener">Karbon</a>
+        <a id="karbon-link" href="https://karbon.thekindkids.be/share?url=\${window.location.hostname}" target="_blank" rel="noopener">Karbon</a>
       </div>
       <div id="karbon-rating">Rating: <strong>\${data.co2_rating}</strong></div>
   `;
