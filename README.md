@@ -35,7 +35,7 @@ You can add the optional attribute `data-custom-style` if you want to take care 
   <div class="karbon-container">
     ${ data.co2_grams ? `<span id="karbon-result">${data.co2_grams}g of CO<sub>2</sub></span
     >` : '<span id="karbon-no-result">Measuring CO<sub>2</sub>&hellip;</span>' }
-    <a id="karbon-link" href="https://karbon.thekindkids.be" target="_blank" rel="noopener">Karbon</a>
+    <a id="karbon-link" href="https://karbon.thekindkids.be/share?url=${window.location.hostname}" target="_blank" rel="noopener">Karbon</a>
   </div>
   <div id="karbon-rating">Rating: <strong>${data.co2_rating}</strong></div>
 </template>

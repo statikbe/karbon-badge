@@ -1,7 +1,28 @@
 {
   "name": "@thekindkids/karbon-badge",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Lightweight JavaScript widget that displays CO2 emissions data for web pages",
+  "keywords": [
+    "carbon",
+    "co2",
+    "emissions",
+    "sustainability",
+    "environment",
+    "badge",
+    "widget"
+  ],
+  "homepage": "https://github.com/statikbe/karbon#readme",
+  "bugs": {
+    "url": "https://github.com/statikbe/karbon/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/statikbe/karbon.git",
+    "directory": "badge"
+  },
+  "license": "MIT",
+  "author": "Karbon",
+  "type": "commonjs",
   "main": "dist/karbon-badge.min.js",
   "files": [
     "dist",
@@ -12,29 +33,26 @@
     "build": "vite build",
     "prepublishOnly": "npm run build"
   },
-  "keywords": [
-    "carbon",
-    "co2",
-    "emissions",
-    "sustainability",
-    "environment",
-    "badge",
-    "widget"
-  ],
-  "author": "Karbon",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/statikbe/karbon.git",
-    "directory": "badge"
+  "dependencies": {
+    "acorn": "^8.15.0",
+    "buffer-from": "^1.1.2",
+    "commander": "^2.20.3",
+    "esbuild": "^0.25.12",
+    "fdir": "^6.5.0",
+    "fsevents": "^2.3.3",
+    "nanoid": "^3.3.11",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "postcss": "^8.5.6",
+    "rollup": "^4.52.5",
+    "source-map": "^0.6.1",
+    "source-map-js": "^1.2.1",
+    "source-map-support": "^0.5.21",
+    "tinyglobby": "^0.2.15"
   },
-  "bugs": {
-    "url": "https://github.com/statikbe/karbon/issues"
-  },
-  "homepage": "https://github.com/statikbe/karbon#readme",
-  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
     "terser": "^5.44.1",
     "vite": "^7.2.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
